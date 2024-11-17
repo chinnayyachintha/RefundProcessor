@@ -99,6 +99,26 @@ This document outlines the complete workflow for processing refunds, ensuring tr
 - **AWS KMS**: To encrypt sensitive data.
 - **CloudWatch**: For logging and monitoring.
 
+# Refund Processing Lambda - API Response Examples
+
+This document provides examples of the expected success and error responses when invoking the **Refund Processing Lambda** API.
+
+## Success Response Example
+
+If the refund is processed successfully, the Lambda will return the following response:
+
+```json
+{
+  "statusCode": 200,
+  "body": {
+    "message": "Refund processed successfully.",
+    "refund_transaction_id": "12345-REFUND",
+    "status": "success",
+    "processor_message": "Refund approved by processor."
+  }
+}
+
+
 ## Additional Notes
 
 - Ensure compliance with applicable data protection and retention regulations.
