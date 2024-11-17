@@ -10,6 +10,18 @@ variable "function_name" {
   description = "Name of the Lambda function"
 }
 
+# API Token for the payment processor
+variable "payroc_api_token" {
+  type        = string
+  description = "API Token for the payment processor"
+}
+
+# URL of the payment processor
+variable "processor_api_url" {
+  type        = string
+  description = "URL of the payment processor"
+}
+
 # Email addresses to receive CloudWatch alarms
 variable "email_endpoints" {
   type        = list(string)

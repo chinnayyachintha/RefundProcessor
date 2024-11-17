@@ -8,8 +8,10 @@ resource "aws_lambda_function" "process_refund" {
 
   environment {
     variables = {
-      LEDGER_TABLE = data.aws_dynamodb_table.payment_ledger.name
-      AUDIT_TABLE  = data.aws_dynamodb_table.payment_audit_trail.name
+      LEDGER_TABLE     = data.aws_dynamodb_table.payment_ledger.name
+      AUDIT_TABLE      = data.aws_dynamodb_table.payment_audit_trail.name
+      PAYROC_API_TOKEN = var.payroc_api_token           # API Token for processor
+      PROCESSOR_API_URL = var.processor_api_url         # The URL of the payment processor
     }
   }
 
