@@ -3,8 +3,8 @@ resource "aws_lambda_function" "process_refund" {
   runtime          = "python3.9"                       # Adjust the runtime as needed
   handler          = "refund_processor.process_refund" # Adjust the handler as needed
   role             = aws_iam_role.refund_process_role.arn
-  filename         = "refund_processor.zip" # Zip containing the Lambda code
-  source_code_hash = filebase64sha256("refund_processor.zip")
+  filename         = "lambda_function/refund_processor.zip" # Zip containing the Lambda code
+  source_code_hash = filebase64sha256("lambda_function/refund_processor.zip")
 
   environment {
     variables = {
